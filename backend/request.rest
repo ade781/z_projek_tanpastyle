@@ -1,0 +1,168 @@
+### Create Petualang (Registrasi)
+POST http://localhost:5000/petualang/add-petualang
+Content-Type: application/json
+
+
+  {
+      "username": "mira_light",
+    "password": "rahasia6",
+    "role": "healer",
+    "level": 6,
+    "koin": 320,
+    "jumlah_misi_selesai": 6,
+    "poin_pengalaman": 2200
+  }
+ 
+
+###
+
+### Login Petualang
+POST http://localhost:5000/petualang/login
+Content-Type: application/json
+
+{
+  "username": "aaa",
+  "password": "aaa"
+}
+
+###
+
+### Get All Petualang (butuh token)
+GET  http://localhost:5000/petualang
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXR1YWxhbmciOjEsInVzZXJuYW1lIjoiYWFhIiwicm9sZSI6Im1lbWJlciIsImxldmVsIjo2LCJrb2luIjoxMDkwLCJqdW1sYWhfbWlzaV9zZWxlc2FpIjoxMSwicG9pbl9wZW5nYWxhbWFuIjoxODIwLCJjcmVhdGVkX2F0IjoiMjAyNS0wNS0yNFQwNDo0ODo0MC4wMDBaIiwiaWF0IjoxNzQ4MTYzNzQ3LCJleHAiOjE3NDgxNjQwNDd9.5a-C00GI-yTPPB8MXLhyUbxK8HK3w_cQxwYXh8ZpHnA
+
+
+###
+
+
+delete http://localhost:5000/petualang/delete-petualang/16
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXR1YWxhbmciOjEsInVzZXJuYW1lIjoiYWFhIiwicm9sZSI6Im1lbWJlciIsImxldmVsIjo2LCJrb2luIjoxMDkwLCJqdW1sYWhfbWlzaV9zZWxlc2FpIjoxMSwicG9pbl9wZW5nYWxhbWFuIjoxODIwLCJjcmVhdGVkX2F0IjoiMjAyNS0wNS0yNFQwNDo0ODo0MC4wMDBaIiwiaWF0IjoxNzQ4MTYzNzQ3LCJleHAiOjE3NDgxNjQwNDd9.5a-C00GI-yTPPB8MXLhyUbxK8HK3w_cQxwYXh8ZpHnA
+
+
+###
+PUT http://localhost:5000/petualang/edit-petualang/2
+Content-Type: application/json
+Authorization: Bearer 
+
+{
+  "koin": 100,
+  "poin_pengalaman": 100,
+  "jumlah_misi_selesai": 5
+}
+
+
+
+
+### Create Misi
+POST http://localhost:5000/misi
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXR1YWxhbmciOjEsInVzZXJuYW1lIjoiYWFhIiwicm9sZSI6Im1lbWJlciIsImxldmVsIjo0LCJrb2luIjo2MDAsImp1bWxhaF9taXNpX3NlbGVzYWkiOjcsInBvaW5fcGVuZ2FsYW1hbiI6OTUwLCJjcmVhdGVkX2F0IjoiMjAyNS0wNS0yNFQwNDo0ODo0MC4wMDBaIiwiaWF0IjoxNzQ4MDcxMjcyLCJleHAiOjE3NDgwNzE1NzJ9.Miak_INsIg7QKPjpD1j0NfR5VnQNRZFVVH-dSI_PheU
+
+
+{
+  "judul_misi": "membunuh slime",
+  "deskripsi": "Jelajahi hutan untuk menemukan artefak modern.",
+  "hadiah_koin": 1000,
+  "hadiah_xp": 500,
+  "status_misi": "belum diambil",
+  "level_required": 1,
+  "id_pembuat": 1
+}
+
+###
+
+### Get Semua Misi
+GET http://localhost:5000/misi
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXR1YWxhbmciOjIsInVzZXJuYW1lIjoiYWRlIiwicm9sZSI6Im1lbWJlciIsImxldmVsIjoxLCJrb2luIjowLCJqdW1sYWhfbWlzaV9zZWxlc2FpIjowLCJwb2luX3BlbmdhbGFtYW4iOjAsImNyZWF0ZWRfYXQiOiIyMDI1LTA1LTIxVDEyOjQ3OjA1LjAwMFoiLCJpYXQiOjE3NDc4MzIzODAsImV4cCI6MTc0NzgzMjY4MH0.0y-OJ0vfV2jOxYzMp78Y1AOeS2J8Jo6AAwxjUXWcI_M
+
+
+###
+
+### Get Misi by ID
+GET http://localhost:5000/logactivity
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9vd25lciI6MywibmFtYV9vd25lciI6IkJ1ZGkiLCJ1c2VybmFtZSI6ImJ1ZGkxIiwidG90YWxfa29pbiI6MTAwMCwiY3JlYXRlZEF0IjoiMjAyNS0wNS0yMVQxMjo0OTowNC4wMDBaIiwidXBkYXRlZEF0IjoiMjAyNS0wNS0yMVQxMjo0OTowNC4wMDBaIiwiaWF0IjoxNzQ3ODMxNzQ5LCJleHAiOjE3NDc4MzIwNDl9.a66dEmuJJbwGJP2Mm7Bydu1c1KUAZZdpmu7E0c7eOco
+
+
+
+### Create new log activity (butuh token)
+POST http://localhost:5000/logactivity
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9vd25lciI6MywibmFtYV9vd25lciI6IkJ1ZGkiLCJ1c2VybmFtZSI6ImJ1ZGkxIiwidG90YWxfa29pbiI6MTAwMCwiY3JlYXRlZEF0IjoiMjAyNS0wNS0yMVQxMjo0OTowNC4wMDBaIiwidXBkYXRlZEF0IjoiMjAyNS0wNS0yMVQxMjo0OTowNC4wMDBaIiwiaWF0IjoxNzQ3ODMyMTE0LCJleHAiOjE3NDc4MzI0MTR9.UWX2EldODmBmOxpQsw_2mOTFeyQEo37uBp26XyeUnyw
+
+
+{
+  "id_petualang": 1,
+  "id_misi": 2,
+  "aktivitas": "Menyelesaikan berkas rere",
+  "keterangan": "Berhasil menyelesaikan misi dengan cepat"
+}
+
+###
+GET http://localhost:5000/logactivity
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9vd25lciI6MywibmFtYV9vd25lciI6IkJ1ZGkiLCJ1c2VybmFtZSI6ImJ1ZGkxIiwidG90YWxfa29pbiI6MTAwMCwiY3JlYXRlZEF0IjoiMjAyNS0wNS0yMVQxMjo0OTowNC4wMDBaIiwidXBkYXRlZEF0IjoiMjAyNS0wNS0yMVQxMjo0OTowNC4wMDBaIiwiaWF0IjoxNzQ3ODMyMTE0LCJleHAiOjE3NDc4MzI0MTR9.UWX2EldODmBmOxpQsw_2mOTFeyQEo37uBp26XyeUnyw
+
+
+
+
+### 
+POST http://localhost:5000/logactivity/ambil-misi/4
+
+
+Content-Type: application/json
+
+{
+  "id_petualang": 1,
+  "id_misi": 2
+}
+
+### Login Petualang
+POST http://localhost:5000/petualang/login
+Content-Type: application/json
+
+{
+  "username": "bbb",
+  "password": "bbbbbb"
+}
+
+###
+GET http://localhost:5000/logactivity/4
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXR1YWxhbmciOjQsInVzZXJuYW1lIjoiYWFhIiwicm9sZSI6InBlbWlsaWsiLCJsZXZlbCI6NSwia29pbiI6NSwianVtbGFoX21pc2lfc2VsZXNhaSI6NSwicG9pbl9wZW5nYWxhbWFuIjo1LCJjcmVhdGVkX2F0IjoiMjAyNS0wNS0yMVQxMzo0ODoxNi4wMDBaIiwiaWF0IjoxNzQ3OTA2NjYzLCJleHAiOjE3NDc5MDY5NjN9.tZ_wp3fHsACFr8mo9DmxV-m7T2GGpns1BW_B1j__Wtk
+
+####
+GET http://localhost:5000/logactivity/:id_petualang
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXR1YWxhbmciOjQsInVzZXJuYW1lIjoiYWFhIiwicm9sZSI6InBlbWlsaWsiLCJsZXZlbCI6NSwia29pbiI6NSwianVtbGFoX21pc2lfc2VsZXNhaSI6NSwicG9pbl9wZW5nYWxhbWFuIjo1LCJjcmVhdGVkX2F0IjoiMjAyNS0wNS0yMVQxMzo0ODoxNi4wMDBaIiwiaWF0IjoxNzQ3OTA1NDg4LCJleHAiOjE3NDc5MDU3ODh9.-zbnb1ZeS2EvYS4ReJaQ-lcPI1Q9wtvjJ2JYlJz5JQg
+
+
+###
+POST http://localhost:5000/owner/add-owner
+Content-Type: application/json
+
+{
+  "nama_owner": "Guild Master Yuno",
+  "username": "qqq",
+  "password": "qqq",
+  "total_koin": 1000
+}
+
+####
+POST http://localhost:5000/owner/login
+Content-Type: application/json
+
+{
+  "username": "qqq",
+  "password": "qqq"
+}
+
+### Login Petualang
+POST http://localhost:5000/petualang/login
+Content-Type: application/json
+
+{
+  "username": "aaa",
+  "password": "aaaaaa"
+}
+####
